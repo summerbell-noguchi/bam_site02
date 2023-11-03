@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>参列ありがとうございます</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+            
+.title-container {
+    display: flex;
+    justify-content: center; /* 中央寄せ */
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    margin: 0 20px; /* GIFとの間隔を設定 */
+}
+
+.side-gif { max-height: 50px; /* 例: GIFの最大の高さを100pxに設定 */
+    max-width: 50px; 
+    /* GIFのサイズや他のスタイルをここで設定 */
+}
+
+        body {
+            font-family: 'Noto Serif JP', serif;
+            background-color: #000;
+            color: #8B0000;
+            text-shadow: 1px 1px 3px #000;
+            overflow: hidden;
+            position: relative;
+            background-image: none; /* ここにGIFのパスを指定 */
+            animation: shake 0.5s 1 forwards 10s;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes shake {
+            10%, 90% {
+                transform: translate3d(-1px, 0, 0);
+            }
+          
+            20%, 80% {
+                transform: translate3d(2px, 0, 0);
+            }
+          
+            30%, 50%, 70% {
+                transform: translate3d(-4px, 0, 0);
+            }
+          
+            40%, 60% {
+                transform: translate3d(4px, 0, 0);
+            }
+        }
+
+        h1, p {
+            animation: fadeIn 2s forwards;
+        }
+
+#darken {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    animation: darkening 5s forwards 15s;
+}
+
+#darken .newMessage {
+    opacity: 0; 
+    animation: showMessage 5s forwards 5s;
+    position: absolute;  /* 追加：位置を絶対位置に */
+    bottom: 10%;         /* 追加：下から10%の位置に配置 */
+}
+
+@keyframes darkening {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes showMessage {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+        <audio src="car-accident 2 karin.mp3" autoplay></audio> <!-- ここにホラーサウンドのパスを指定 -->
+
+    <div class="title-container">
+    <img src="left-gif.gif" alt="左GIF" class="side-gif"> <!-- 左側のGIF -->
+    <h1>招待状</h1>
+    <img src="right-gif.gif" alt="右GIF" class="side-gif"> <!-- 右側のGIF -->
+</div>
+
+    <p>
+        金谷夏鈴につきまして 先ほど永眠し、<br>
+        インターネットの世界へと旅立ちましたので謹んで皆様にお知らせいたします<br><br>
+        故人に対する生前中のご厚誼に深く感謝申し上げます<br><br>
+        尚 葬儀（展示）は 只今の時間から まわれ虎2階にて執り行います<br><br>
+        遺影の前に線香を用意しております<br>
+        そちらをお一人様一本ずつ焚いてください<br>
+        皆様のご多幸を夏鈴は切に願っております<br><br>
+        喪主 ダックス野口
+    </p>
+<div id="darken">
+            画面の向こう側にて待つ<br>２階にお進みください
+            <div class="newMessage">これはフィクションです</div>
+</div>
+
+</body>
+</html>
